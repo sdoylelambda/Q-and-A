@@ -152,7 +152,7 @@
                                     <outlet property="answerLabel" destination="I1P-jg-VZG" id="GyM-lY-Vuh"/>
                                     <outlet property="askerLabel" destination="R5A-7H-Yei" id="0Yv-aK-95A"/>
                                     <outlet property="questionLabel" destination="7Ql-xF-zry" id="SGS-cM-oob"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="wg6-pd-zcy"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowAnswer" id="wg6-pd-zcy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -164,7 +164,7 @@
                     <navigationItem key="navigationItem" title="Q &amp; A" id="VjV-eU-9Gg">
                         <barButtonItem key="rightBarButtonItem" title="Ask a Question" id="HE2-dZ-O2K">
                             <connections>
-                                <segue destination="9td-UV-3MY" kind="show" id="0fR-Iy-29w"/>
+                                <segue destination="9td-UV-3MY" kind="show" identifier="AskQuestionSegue" id="0fR-Iy-29w"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

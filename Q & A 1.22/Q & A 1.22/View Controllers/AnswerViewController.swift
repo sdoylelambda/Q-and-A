@@ -2,7 +2,8 @@ import UIKit
 
 class AnswerViewController: UIViewController {
     
-    
+    var questionController: QuestionController?
+    var question: Question?
 
     override func viewDidLoad() {
         super.viewDidLoad()
