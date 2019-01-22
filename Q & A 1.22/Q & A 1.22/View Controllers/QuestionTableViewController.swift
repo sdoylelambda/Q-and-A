@@ -2,27 +2,25 @@ import UIKit
 
 class QuestionTableViewController: UITableViewController {
 
+ let questionController = QuestionController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return questionController.questions.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: QuestionTableViewCell.reuseIdentifer, for: indexPath) as? QuestionTableViewCell else { return UITableViewCell() }
 
-        // Configure the cell...
+        let question = questionController.questions[indexPath.row]
+        cell.question = question
 
         return cell
     }
