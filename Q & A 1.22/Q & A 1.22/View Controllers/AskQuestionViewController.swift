@@ -2,7 +2,12 @@ import UIKit
 
 class AskQuestionViewController: UIViewController {
     
+    var questionController: QuestionController?
+    
     @IBAction func submitQuestionButton(_ sender: Any) {
+        guard let question = submitQuestionTextField.text,
+            let asker = submitQuestionTextView.text else { return }
+        questionController?.createQuestion(question: question, asker: asker)
     }
     
 
