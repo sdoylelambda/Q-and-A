@@ -5,13 +5,18 @@ class AnswerViewController: UIViewController {
     var questionController: QuestionController?
     var question: Question?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateViews()
     }
     
-
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        updateViews()
+        
+        // Do any additional setup after loading the view.
+    }
     /*
     // MARK: - Navigation
 

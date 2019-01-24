@@ -39,6 +39,9 @@ class QuestionTableViewController: UITableViewController {
         if (segue.identifier == "ShowAnswer") {
             guard let showAnswerVC = segue.destination as? AnswerViewController else { return }
             showAnswerVC.questionController = questionController
+            guard let index = tableView.indexPathForSelectedRow else { return }
+            let question = questionController.questions[index.row]
+            showAnswerVC.question = question
         
         } else if (segue.identifier == "AskQuestionSegue") {
             guard let askQuestionSegueVC = segue.destination as? AskQuestionViewController else { return }
