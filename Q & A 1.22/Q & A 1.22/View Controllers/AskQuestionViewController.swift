@@ -8,6 +8,7 @@ class AskQuestionViewController: UIViewController {
         guard let question = submitQuestionTextField.text,
             let asker = submitQuestionTextView.text else { return }
         questionController?.createQuestion(question: question, asker: asker)
+        navigationController?.popViewController(animated: true)
     }
     
 
